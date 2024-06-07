@@ -231,29 +231,106 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: rgb(98, 196, 119);
 
 }
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    display: block;
+    background-color: #fff;
+    position: relative;
+    height: 3px;
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+}
+
+.nav-toggle .hamburger::before {
+    top: -8px;
+}
+
+.nav-toggle .hamburger::after {
+    top: 8px;
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .navigations ul {
         flex-direction: column;
         width: 100%;
-    }
-    
-    .nav-menu li {
-        margin: 10px 0;
-    }
-
-    .nav-toggle {
-        display: block;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333;  /* Background color of dropdown */
     }
 
-    .nav-menu.active {
+    .navigations ul.active {
         display: flex;
+    }
+
+    .navigations li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
     }
 }
 
 
-
+/* Media Queries for Phone Devices */
+@media (width: 600px) {
+    .navigations ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigations li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    body h1 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .body-content {
+        flex-direction: column;
+    }
+    .login-content,
+    .register-content {
+        width: 80%;
+        border-radius: 25px;
+    }
+    input {
+        width: 85%;
+    }
+    .COPY {
+        font-size: 14px;
+    }
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+    header {
+        flex-direction: column;
+    }
+}
 
 
