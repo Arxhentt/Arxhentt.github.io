@@ -17,6 +17,10 @@ document.querySelector(".close1").addEventListener("click", function(){
 
 })
 
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+    const navMenu = document.querySelector('.navigations ul');
+    navMenu.classList.toggle('active');
+});
 
 
 
