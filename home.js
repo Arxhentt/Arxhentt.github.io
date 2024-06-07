@@ -21,7 +21,3 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
     const navMenu = document.querySelector('.navigations ul');
     navMenu.classList.toggle('active');
 });
-
-
-
-
